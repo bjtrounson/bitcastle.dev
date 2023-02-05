@@ -1,0 +1,342 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="min-h-screen whitespace-nowrap overflow-x-hidden bg-white">
+		<Header title={SITE_TITLE} />
+		<main class="relative z-0 overflow-hidden ">
+			<video
+				autoplay
+				loop
+				muted
+				class="absolute -z-1 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover w-auto min-w-screen min-h-screen max-w-none"
+			>
+				<source
+					src="/animated-background.mp4"
+					type="video/mp4"
+				/>
+			</video>
+			<div class="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover w-screen h-[1080px] min-[2560px]:h-screen bg-gradient-to-t from-white via-transparent to-white" />
+			<div class="relative bg-white z-30 container max-w-2xl mx-auto px-4 pb-4 rounded-b-xl">
+				<div class="z-30 flex-col whitespace-normal mx-4 pt-4">
+					<h2 class="text-4xl font-bold border-b uppercase my-4">-> About Me</h2>
+					<div class="mx-4">
+						<p class="text-base my-2">
+							Hi, I'm Ben! I am a talented and driven software developer based in Christchurch, New Zealand,
+							specializing in web and mobile development. My passion for technology has driven me to explore various programming languages,
+							frameworks, and even system administration, constantly seeking new and challenging projects to further my skills and experience.
+						</p>
+						<p class="text-base my-2">
+							When I'm not coding, you'll find me immersed in my favorite manga series, Berserk, or tinkering with my home-lab.
+							I bring a strong work ethic, attention to detail, and a creative problem-solving approach to every project,
+							ensuring the delivery of high-quality and user-friendly software solutions.
+						</p>
+						<p class="text-base my-2">
+							With a drive for excellence and a commitment to producing cutting-edge software,
+							I am eager to share my portfolio with you and demonstrate my abilities as a software developer.
+							Let's work together to bring your ideas to life.
+						</p>
+					</div>
+				</div>
+				<div class="flex-col whitespace-normal mx-4 pt-4">
+					<h2 class="text-4xl font-bold border-b uppercase my-4">-> Toolkit</h2>
+					<div class="mt-4">
+						<h4 class="text-xl font-bold pr-4">Most Used</h4>
+						<div class="flex flex-row flex-wrap gap-2 mt-4">
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/ts-logo.svg" />
+								<h2 class="font-bold text-xl ml-2">TypeScript</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/react-query.svg" />
+								<h2 class="font-bold text-xl ml-2">React / TanStack Query</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/tailwindcss-mark.svg" />
+								<h2 class="font-bold text-xl ml-2">Tailwind</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/react-icon.svg" />
+								<h2 class="font-bold text-xl ml-2">React</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/react-icon.svg" />
+								<h2 class="font-bold text-xl ml-2">React Native</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/expo-logo.svg" />
+								<h2 class="font-bold text-xl ml-2">Expo</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/nextjs-icon.svg" />
+								<h2 class="font-bold text-xl ml-2">Next.js</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/jest-icon.svg" />
+								<h2 class="font-bold text-xl ml-2">Jest</h2>
+							</div>
+						</div>
+					</div>
+					<div class="mt-4">
+						<h4 class="text-xl font-bold pr-4">Other</h4>
+						<div class="flex flex-row flex-wrap gap-2 mt-4">
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/php-logo.svg" />
+								<h2 class="font-bold text-xl ml-2">PHP</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/laravel-logo.svg" />
+								<h2 class="font-bold text-xl ml-2">Laravel</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/csharp-logo.png" />
+								<h2 class="font-bold text-xl ml-2">C#</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="h-8" src="/software/java-logo.svg" />
+								<h2 class="font-bold text-xl ml-2">Java</h2>
+							</div>
+							<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+								<img class="w-8" src="/software/python-logo.svg" />
+								<h2 class="font-bold text-xl ml-2">Python</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mx-4 pt-4">
+					<h2 class="text-4xl font-bold border-b uppercase my-4">-> Projects</h2>
+					<div class="flex flex-wrap">
+						<div class="relative bg-white drop-shadow-lg rounded-xl p-4 mt-8">
+							<img class="absolute bg-white rounded-full drop-shadow p-2 w-12 -left-4 -top-4 z-0" src="/puck/puck-1.png" />
+							<div class="z-10 mt-4">
+								<div class="flex flex-row">
+									<h3 class="text-xl font-bold border-b pr-4">expo-select-dropdown</h3>
+									<div class="flex flex-row ml-auto gap-2">
+										<a href="https://www.npmjs.com/package/expo-select-dropdown" target="_blank">
+											<img class="ml-auto w-8" src="/software/npm-logo.svg" />
+										</a>
+										<a href="https://github.com/bjtrounson/expo-select-dropdown" target="_blank">
+											<img class="ml-auto w-8" src="/github-mark.svg" />
+										</a>
+									</div>
+								</div>
+								<div class="max-w-3/4 mt-3">
+									<div class="">
+										<h4 class="font-bold">About</h4>
+										<div class="flex flex-col md:flex-row">
+											<p class="whitespace-normal mr-4">
+												I made a special dropdown for the new PIN App using React Native and Expo.
+												It's easy to search and you can even make your own filters. I did this project in my free time to show my skills and expand my portfolio.
+												It's a good example of how I make simple and helpful software.
+											</p>
+											<img class="rounded-xl border w-full md:w-2/5" src="/projects/expo-select-dropdown-preview.gif" />
+										</div>
+									</div>
+									<div class="mt-3">
+										<h4 class="font-bold">Technologies</h4>
+										<div class="flex flex-row flex-wrap gap-2 mt-4">
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/ts-logo.svg" />
+												<h5 class="font-bold text-md ml-2">TypeScript</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/react-icon.svg" />
+												<h5 class="font-bold text-md ml-2">React Native</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/expo-logo.svg" />
+												<h5 class="font-bold text-md ml-2">Expo Vector Icons</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="relative bg-white drop-shadow-lg rounded-xl p-4 mt-8">
+							<img class="absolute bg-white rounded-full drop-shadow p-2 w-12 -left-4 -top-4 z-0" src="/puck/puck-4.png" />
+							<div class="z-10 mt-4">
+								<div class="flex flex-row">
+									<h3 class="text-xl font-bold border-b pr-4">PIN (Pay It Now) Mobile App</h3>
+									<div class="flex flex-row ml-auto gap-2">
+										<a class="px-4 py-1 drop-shadow bg-white rounded-xl text-center my-auto font-bold uppercase" href="https://payitnow.io/download-app/" target="_blank">
+											Download
+										</a>
+									</div>
+								</div>
+								<div class="max-w-3/4 mt-3">
+									<h4 class="font-bold">About</h4>
+									<div class="flex flex-col md:flex-row">
+										<p class="whitespace-normal mr-4">
+											As one of the current maintainer and developer of the PIN Network App,
+											I am responsible for both its ongoing upkeep and the development of its new version.
+											The PIN Network mobile application serves as the primary interface for interacting with the network,
+											offering users a range of essential features such as payment options, reward opportunities,
+											and digital wallet management. As a dedicated and skilled developer,
+											I am committed to ensuring the app provides a seamless and user-friendly experience for all users of the PIN Network.
+										</p>
+										<img class="rounded-xl border w-full md:w-2/5 md:h-1/2 md:my-auto" src="/projects/payitnow-app-hero.avif" />
+									</div>
+									<div class="mt-3">
+										<h4 class="font-bold">Technologies</h4>
+										<div class="flex flex-row flex-wrap gap-2 mt-4">
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/react-icon.svg" />
+												<h5 class="font-bold text-md ml-2">React Native</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/expo-logo.svg" />
+												<h5 class="font-bold text-md ml-2">Expo</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/react-query.svg" />
+												<h5 class="font-bold text-md ml-2">React Query</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/tailwindcss-mark.svg" />
+												<h5 class="font-bold text-md ml-2">Tailwind</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/jest-icon.svg" />
+												<h5 class="font-bold text-md ml-2">Jest</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/ts-logo.svg" />
+												<h5 class="font-bold text-md ml-2">TypeScript</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="relative bg-white drop-shadow-lg rounded-xl p-4 mt-8">
+							<img class="absolute bg-white rounded-full drop-shadow p-2 w-12 h-12 -left-4 -top-4 z-0" src="/puck/puck-5.webp" />
+							<div class="z-10 mt-4">
+								<div class="flex flex-row">
+									<h3 class="text-xl font-bold border-b pr-4">PIN Scan</h3>
+									<div class="flex flex-row ml-auto gap-2">
+										<a class="px-4 py-1 drop-shadow bg-white rounded-xl text-center my-auto font-bold uppercase" href="https://pinscan.io" target="_blank">
+											Visit
+										</a>
+									</div>
+								</div>
+								<div class="max-w-3/4 mt-3">
+									<h4 class="font-bold">About</h4>
+									<div class="flex flex-row">
+										<p class="whitespace-normal mr-4">
+											As a proud addition to my portfolio,
+											I present the Pay It Now Layer 2 Transaction History platform.
+											By designing a seamless transaction list sorting feature and an address search tool,
+											I was able to bring transparency and accessibility to the world of cryptocurrency.
+											The ability to view price graphs and key stats of the PIN Token showcases my commitment to delivering high-quality,
+											user-friendly software solutions. Keeping users more informed about their investments and PIN Token related information.
+										</p>
+									</div>
+									<div class="mt-3">
+										<h4 class="font-bold">Technologies</h4>
+										<div class="flex flex-row flex-wrap gap-2 mt-4">
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/react-icon.svg" />
+												<h5 class="font-bold text-md ml-2">React</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/nextjs-icon.svg" />
+												<h5 class="font-bold text-md ml-2">Next.js</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/tailwindcss-mark.svg" />
+												<h5 class="font-bold text-md ml-2">Tailwind</h5>
+											</div>
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/ts-logo.svg" />
+												<h5 class="font-bold text-md ml-2">TypeScript</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="relative bg-white drop-shadow-lg rounded-xl p-4 mt-8">
+							<img class="absolute bg-white rounded-full drop-shadow p-2 w-12 -left-4 -top-4 z-0" src="/puck/puck-3.png" />
+							<div class="z-10 mt-4">
+								<div class="flex flex-row">
+									<h3 class="text-xl font-bold border-b pr-4">Sokoban Game</h3>
+									<div class="flex flex-row ml-auto gap-2">
+										<a href="https://github.com/bjtrounson/Sokoban_Game_Engine" target="_blank">
+											<img class="ml-auto w-8" src="/github-mark.svg" />
+										</a>
+									</div>
+								</div>
+								<div class="max-w-3/4 mt-3">
+									<h4 class="font-bold">About</h4>
+									<div class="flex flex-row">
+										<p class="whitespace-normal mr-4">
+											During my C# Programming course at the Ara Institute of Canterbury,
+											I developed a Windows puzzle game based on the classic game 'Sokoban'.
+											I successfully recreated the game in C# and performed full unit-testing to ensure its functionality.
+											To enhance the user experience, I adapted the C# game model to work with a Windows UI library (WinForm).
+											This project demonstrates my skills in C# programming and ability to create a user-friendly software solution.
+										</p>
+									</div>
+									<div class="mt-3">
+										<h4 class="font-bold">Technologies</h4>
+										<div class="flex flex-row flex-wrap gap-2 mt-4">
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/csharp-logo.png" />
+												<h5 class="font-bold text-md ml-2">C#</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="relative bg-white drop-shadow-lg rounded-xl p-4 mt-8">
+							<img class="absolute bg-white rounded-full drop-shadow p-2 w-12 -left-4 -top-4 z-0" src="/puck/puck-2.jpg" />
+							<div class="z-10 mt-4">
+								<div class="flex flex-row">
+									<h3 class="text-xl font-bold border-b pr-4">ZombieInMyPocket</h3>
+									<div class="flex flex-row ml-auto gap-2">
+										<a href="https://github.com/bjtrounson/ZombieInMyPocket" target="_blank">
+											<img class="ml-auto w-8" src="/github-mark.svg" />
+										</a>
+									</div>
+								</div>
+								<div class="max-w-3/4 mt-3">
+									<h4 class="font-bold">About</h4>
+									<div class="flex flex-row">
+										<p class="whitespace-normal mr-4">
+											I created a terminal-based Python game inspired by the classic paper print-out game 'Zombie in My Pocket'
+											<a target="_blank" href="https://boardgamegeek.com/boardgame/33468/zombie-my-pocket">(Paper Version)</a>.
+											Developed during my Advanced Programming course at Ara Institute of Canterbury,
+											this project allowed me to apply my knowledge of design patterns and enhance my skills in Python programming.
+											A fun and challenging project, it demonstrates my ability to bring even the simplest concepts to life with code.
+										</p>
+									</div>
+									<div class="mt-3">
+										<h4 class="font-bold">Technologies</h4>
+										<div class="flex flex-row flex-wrap gap-2 mt-4">
+											<div class="p-2 drop-shadow bg-white rounded-xl flex-row flex items-center">
+												<img class="w-8" src="/software/python-logo.svg" />
+												<h5 class="font-bold text-md ml-2">Python</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
