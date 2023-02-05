@@ -11,6 +11,5 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://bitcastle.dev',
-  integrations: [mdx(), sitemap(), react(), tailwind()],
-  outDir: "./site"
+  integrations: [mdx(), sitemap(), react(), tailwind()]
 });
