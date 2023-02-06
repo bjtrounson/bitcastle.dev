@@ -2,6 +2,7 @@ import ProjectTech from "./ProjectTech";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import ProjectLink from "./ProjectLink";
 import {useMemo, useState} from "react";
+import useDarkMode from "../hooks/useDarkMode";
 
 interface ProjectProps {
     id: number
@@ -18,33 +19,34 @@ interface ProjectPreviewProps {
     classes: string
 }
 const ProjectPreview = ({src, type, classes}: ProjectPreviewProps) => {
-    if (type === "image") return <img className={classes} src={src} alt={"project-preview"}/>
+    if (type === "image") return <img className={`${classes} bg-white  drop-shadow`} src={src} alt={"project-preview"}/>
     return (
-        <video className={classes} autoPlay loop muted>
+        <video className={`${classes} bg-white drop-shadow`} autoPlay loop muted>
             <source src={src} />
         </video>
     )
 }
 const Project = ({id, title, description, previewImg, links, technologies}: ProjectProps) => {
+    const [isDarkMode] = useDarkMode();
     return (
-        <div key={id} className="relative bg-white drop-shadow-lg rounded-xl p-4 mt-8">
-            <img className="absolute bg-white rounded-full drop-shadow p-2 w-12 h-12 -left-4 -top-4 z-0"
-                 src={`/puck/puck-${id}.webp`} alt={`puck-corner-img-${id}`}/>
+        <div key={id} className="relative bg-white dark:bg-zinc-900 drop-shadow-lg rounded-xl p-4 mt-8">
+            <img className="absolute bg-white dark:bg-zinc-800 rounded-full drop-shadow p-2 w-12 h-12 -left-4 -top-4 z-0"
+                 src={`${ isDarkMode ? `/puck/puck-${id}-white.webp` : `/puck/puck-${id}.webp`}`} alt={`puck-corner-img-${id}`}/>
             <div className="z-10 mt-4">
                 <div className="flex flex-row">
-                    <h3 className="text-xl font-bold border-b pr-4">{title}</h3>
+                    <h3 className="text-xl font-bold border-b pr-4 text-black dark:text-white">{title}</h3>
                     <div className="flex flex-row ml-auto gap-2">
                         {links.map(link => {return link})}
                     </div>
                 </div>
                 <div className="max-w-3/4 mt-3">
-                    <h4 className="font-bold">About</h4>
+                    <h4 className="font-bold text-black dark:text-white">About</h4>
                     <div className="flex flex-col md:flex-row">
-                        <p className="whitespace-normal mr-4">{description}</p>
+                        <p className="whitespace-normal mr-4 text-black dark:text-white">{description}</p>
                         {previewImg ? <ProjectPreview src={previewImg.src} type={previewImg.type} classes={previewImg.classes} /> : null}
                     </div>
                     <div className="mt-3">
-                        <h4 className="font-bold">Technologies</h4>
+                        <h4 className="font-bold text-black dark:text-white">Technologies</h4>
                         <div className="flex flex-row flex-wrap gap-2 mt-4">
                             {technologies.map(tech => {return tech})}
                         </div>
@@ -57,6 +59,7 @@ const Project = ({id, title, description, previewImg, links, technologies}: Proj
 
 
 const ProjectCarousel = () => {
+    const [isDarkMode, setIsDarkMode] = useDarkMode();
     const projects: ProjectProps[] = [
         {
             id: 1,
@@ -88,7 +91,7 @@ const ProjectCarousel = () => {
                     key={2}
                     url={"https://github.com/bjtrounson/expo-select-dropdown"}
                     isText={false}
-                    img={"/github-mark.svg"}
+                    img={`${isDarkMode ? "/github-mark-white.svg" : "/github-mark.svg"}`}
                     title={"github"}
                 />
             ]
@@ -168,7 +171,7 @@ const ProjectCarousel = () => {
                     key={1}
                     url={"https://github.com/bjtrounson/Sokoban_Game_Engine"}
                     isText={false}
-                    img={"/github-mark.svg"}
+                    img={`${isDarkMode ? "/github-mark-white.svg" : "/github-mark.svg"}`}
                     title={"github"}
                 />
             ]
@@ -195,7 +198,7 @@ const ProjectCarousel = () => {
                     key={1}
                     url={"https://github.com/bjtrounson/ZombieInMyPocket"}
                     isText={false}
-                    img={"/github-mark.svg"}
+                    img={`${isDarkMode ? "/github-mark-white.svg" : "/github-mark.svg"}`}
                     title={"github"}
                 />
             ]
@@ -234,7 +237,7 @@ const ProjectCarousel = () => {
         <div className={"flex flex-col"}>
             <div className={"flex flex-row mx-auto"}>
                 <button className={"flex"} onClick={() => onSelect(false)}>
-                    <span className="material-symbols-outlined my-auto">chevron_left</span>
+                    <span className="material-symbols-outlined my-auto text-black dark:text-white">chevron_left</span>
                 </button>
                 {projects.map((project, index) => {
                     if (index > 10) return null;
@@ -243,7 +246,7 @@ const ProjectCarousel = () => {
                     )
                 })}
                 <button className={"flex"} onClick={() => onSelect(true)}>
-                    <span className="material-symbols-outlined my-auto">chevron_right</span>
+                    <span className="material-symbols-outlined my-auto text-black dark:text-white">chevron_right</span>
                 </button>
             </div>
             <Project

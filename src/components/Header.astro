@@ -1,5 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import ThemeIcon from "./ThemeIcon";
 ---
 
 <header class="relative flex z-30 justify-center bg-[url('/banner.png')] bg-cover bg-no-repeat bg-center h-52 border-b-4 dark:border-white border-black drop-shadow-lg">
@@ -12,6 +13,7 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink class="flex flex-row rounded-full text-black px-3 py-1 self-center" href="https://github.com/bjtrounson" target="_blank">
 				<img src="/github-mark-white.svg" class="w-8" alt="github"/>
 			</HeaderLink>
+			<ThemeIcon client:load/>
 		</nav>
 	</div>
 </header>

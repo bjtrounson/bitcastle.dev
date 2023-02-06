@@ -7,7 +7,7 @@ interface ProjectLinkProps {
 
 const ProjectLink = ({url, isText, img, title}: ProjectLinkProps) => {
     if (isText) return (
-        <a className="px-4 py-1 drop-shadow bg-white rounded-xl text-center my-auto font-bold uppercase"
+        <a className="px-4 py-1 drop-shadow bg-white dark:bg-zinc-800 rounded-xl text-center my-auto font-bold uppercase"
            href={url} target="_blank">
             {title}
         </a>

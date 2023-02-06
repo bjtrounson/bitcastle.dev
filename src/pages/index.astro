@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ProjectCarousel from "../components/ProjectCarousel";
 import ProjectTech from "../components/ProjectTech";
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'; import ThemeIcon from "../components/ThemeIcon";
 ---
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="min-h-screen whitespace-nowrap overflow-x-hidden bg-white">
+	<body class="min-h-screen whitespace-nowrap overflow-x-hidden bg-white dark:bg-zinc-900">
 		<Header title={SITE_TITLE} />
 		<main class="relative z-0 overflow-hidden ">
 			<video
@@ -26,22 +26,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					type="video/mp4"
 				/>
 			</video>
-			<div class="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover w-screen h-[1080px] min-[2560px]:h-screen bg-gradient-to-t from-white via-transparent to-white" />
-			<div class="relative bg-white z-30 container max-w-2xl mx-auto px-4 pb-4 rounded-b-xl">
+			<div class="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover w-screen h-[1080px] min-[2560px]:h-screen bg-gradient-to-t from-white via-transparent to-white dark:to-zinc-900 dark:via-transparent dark:from-zinc-900" />
+			<div class="relative bg-white dark:bg-zinc-900 z-30 container max-w-2xl mx-auto px-4 pb-4 rounded-b-xl">
 				<div class="z-30 flex-col whitespace-normal mx-4 pt-4">
-					<h2 class="text-4xl font-bold border-b uppercase my-4">-> About Me</h2>
+					<h2 class="text-4xl font-bold border-b uppercase my-4 text-black dark:text-white">-> About Me</h2>
 					<div class="mx-4">
-						<p class="text-base my-2">
+						<p class="text-base my-2 text-black dark:text-white">
 							Hi, I'm Ben! I am a talented and driven software developer based in Christchurch, New Zealand,
 							specializing in web and mobile development. My passion for technology has driven me to explore various programming languages,
 							frameworks, and even system administration, constantly seeking new and challenging projects to further my skills and experience.
 						</p>
-						<p class="text-base my-2">
+						<p class="text-base my-2 text-black dark:text-white">
 							When I'm not coding, you'll find me immersed in my favorite manga series, Berserk, or tinkering with my home-lab.
 							I bring a strong work ethic, attention to detail, and a creative problem-solving approach to every project,
 							ensuring the delivery of high-quality and user-friendly software solutions.
 						</p>
-						<p class="text-base my-2">
+						<p class="text-base my-2 text-black dark:text-white">
 							With a drive for excellence and a commitment to producing cutting-edge software,
 							I am eager to share my portfolio with you and demonstrate my abilities as a software developer.
 							Let's work together to bring your ideas to life.
@@ -49,9 +49,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					</div>
 				</div>
 				<div class="flex-col whitespace-normal mx-4 pt-4">
-					<h2 class="text-4xl font-bold border-b uppercase my-4">-> Toolkit</h2>
+					<h2 class="text-4xl font-bold border-b uppercase my-4 text-black dark:text-white">-> Toolkit</h2>
 					<div class="mt-4">
-						<h3 class="text-xl font-bold pr-4">Most Used</h3>
+						<h3 class="text-xl font-bold pr-4 text-black dark:text-white">Most Used</h3>
 						<div class="flex flex-row flex-wrap gap-2 mt-4">
 							<ProjectTech name="TypeScript" img="/software/ts-logo.svg"/>
 							<ProjectTech name="React / TanStack Query<" img="/software/react-query.svg"/>
@@ -64,7 +64,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						</div>
 					</div>
 					<div class="mt-4">
-						<h3 class="text-xl font-bold pr-4">Other</h3>
+						<h3 class="text-xl font-bold pr-4 text-black dark:text-white">Other</h3>
 						<div class="flex flex-row flex-wrap gap-2 mt-4">
 							<ProjectTech name="PHP" img="/software/php-logo.svg"/>
 							<ProjectTech name="Laravel" img="/software/laravel-logo.svg"/>
@@ -75,7 +75,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					</div>
 				</div>
 				<div class="mx-4 pt-4">
-					<h2 class="text-4xl font-bold border-b uppercase my-4">-> Projects</h2>
+					<h2 class="text-4xl font-bold border-b uppercase my-4 text-black dark:text-white">-> Projects</h2>
 					<ProjectCarousel client:load />
 				</div>
 			</div>
