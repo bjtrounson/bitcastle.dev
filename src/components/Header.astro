@@ -1,17 +1,16 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 ---
 
 <header class="relative flex z-30 justify-center bg-[url('/banner.png')] bg-cover bg-no-repeat bg-center h-52 border-b-4 dark:border-white border-black drop-shadow-lg">
 	<div class="flex flex-col my-auto">
-		<h2 class="uppercase text-6xl text-white font-black font-serif">Ben Trounson</h2>
+		<h2 class="uppercase text-4xl md:text-6xl text-white font-black font-serif">Ben Trounson</h2>
 		<nav class="flex justify-center ">
 			<HeaderLink class="flex flex-row rounded-full text-black px-3 py-1 self-center" href="https://twitter.com/bjtrounson" target="_blank">
-				<img src="/twitter-logo-white.svg" class="w-8"/>
+				<img src="/twitter-logo-white.svg" class="w-8" alt="twitter"/>
 			</HeaderLink>
 			<HeaderLink class="flex flex-row rounded-full text-black px-3 py-1 self-center" href="https://github.com/bjtrounson" target="_blank">
-				<img src="/github-mark-white.svg" class="w-8"/>
+				<img src="/github-mark-white.svg" class="w-8" alt="github"/>
 			</HeaderLink>
 		</nav>
 	</div>
