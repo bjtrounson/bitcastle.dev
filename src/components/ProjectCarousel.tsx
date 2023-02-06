@@ -1,5 +1,4 @@
 import ProjectTech from "./ProjectTech";
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import ProjectLink from "./ProjectLink";
 import {useMemo, useState} from "react";
 import useDarkMode from "../hooks/useDarkMode";
