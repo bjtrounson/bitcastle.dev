@@ -5,7 +5,6 @@ import {useEffect} from "react";
 export default function () {
     const $isDarkMode = useStore(isDarkMode)
     const colorTheme = $isDarkMode ? 'light' : 'dark';
-    console.log({$isDarkMode})
 
     useEffect(() => {
         const root = window.document.documentElement;

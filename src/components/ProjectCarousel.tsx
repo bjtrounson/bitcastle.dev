@@ -1,6 +1,7 @@
 import ProjectTech from "./ProjectTech";
 import ProjectLink from "./ProjectLink";
 import {useMemo, useState} from "react";
+import { motion } from "framer-motion";
 import useDarkMode from "../hooks/useDarkMode";
 
 interface ProjectProps {
@@ -28,7 +29,17 @@ const ProjectPreview = ({src, type, classes}: ProjectPreviewProps) => {
 const Project = ({id, title, description, previewImg, links, technologies}: ProjectProps) => {
     const [isDarkMode] = useDarkMode();
     return (
-        <div key={id} className="relative bg-white dark:bg-zinc-900 drop-shadow-lg rounded-xl p-4 mt-8">
+        <motion.div
+            layout
+            animate={{ opacity: 1 }}
+            transition={{
+                type: "easeIn",
+                opacity: { ease: "linear" },
+                layout: { duration: 0.5 }
+            }}
+            key={id}
+            className="relative bg-white dark:bg-zinc-900 drop-shadow-lg rounded-xl p-4 mt-8"
+        >
             <img className="absolute bg-white dark:bg-zinc-800 rounded-full drop-shadow p-2 w-12 h-12 -left-4 -top-4 z-0"
                  src={`${ isDarkMode ? `/puck/puck-${id}-white.webp` : `/puck/puck-${id}.webp`}`} alt={`puck-corner-img-${id}`}/>
             <div className="z-10 mt-4">
@@ -52,13 +63,13 @@ const Project = ({id, title, description, previewImg, links, technologies}: Proj
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
 
 const ProjectCarousel = () => {
-    const [isDarkMode, setIsDarkMode] = useDarkMode();
+    const [isDarkMode] = useDarkMode();
     const projects: ProjectProps[] = [
         {
             id: 1,
@@ -112,7 +123,7 @@ const ProjectCarousel = () => {
             technologies: [
                 <ProjectTech key={1} name={"React Native"} img={"/software/react-icon.svg"} />,
                 <ProjectTech key={2} name={"Expo"} img={"/software/expo-logo.svg"} />,
-                <ProjectTech key={3} name={"React Query"} img={"/software/expo-logo.svg"} />,
+                <ProjectTech key={3} name={"React Query"} img={"/software/react-query.svg"} />,
                 <ProjectTech key={4} name={"Tailwind"} img={"/software/tailwindcss-mark.svg"} />,
                 <ProjectTech key={5} name={"Jest"} img={"/software/jest-icon.svg"} />,
                 <ProjectTech key={6} name={"TypeScript"} img={"/software/ts-logo.svg"} />
@@ -232,6 +243,23 @@ const ProjectCarousel = () => {
         }
     }
 
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                delayChildren: 0.2
+            }
+        }
+    }
+
+    const item = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1
+        }
+    }
+
     return (
         <div className={"flex flex-col"}>
             <div className={"flex flex-row mx-auto"}>
@@ -241,23 +269,41 @@ const ProjectCarousel = () => {
                 {projects.map((project, index) => {
                     if (index > 10) return null;
                     return (
-                        <div key={project.id} className={`${projects[index].id === selectedProject.id ? "bg-red-400" : "bg-zinc-200"} p-2 rounded-full w-4 h-4 mx-1 self-center`}></div>
+                        <div key={project.id} className={`${projects[index].id === selectedProject?.id ? "bg-red-400" : "bg-zinc-200"} p-2 rounded-full w-4 h-4 mx-1 self-center`}></div>
                     )
                 })}
                 <button className={"flex"} onClick={() => onSelect(true)}>
                     <span className="material-symbols-outlined my-auto text-black dark:text-white">chevron_right</span>
                 </button>
             </div>
-            <Project
-                key={selectedProject.id}
-                id={selectedProject.id}
-                title={selectedProject.title}
-                previewImg={selectedProject.previewImg}
-                description={selectedProject.description}
-                technologies={selectedProject.technologies}
-                links={selectedProject.links}
-            />
-
+            <motion.ul
+                className="flex flex-row overflow-x-auto"
+                variants={container}
+                initial="hidden"
+                animate="show"
+            >
+                {projects.map((project, index) => {
+                    if (index > 10) return null;
+                    return (
+                        <motion.li
+                            key={project.id}
+                            className="mx-4"
+                            hidden={project.id !== selectedProject?.id}
+                            variants={item}
+                        >
+                            <Project
+                                key={project.id}
+                                id={project.id}
+                                title={project.title}
+                                previewImg={project.previewImg}
+                                description={project.description}
+                                technologies={project.technologies}
+                                links={project.links}
+                            />
+                        </motion.li>
+                    )
+                })}
+            </motion.ul>
         </div>
     );
 };
