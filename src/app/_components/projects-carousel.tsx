@@ -7,7 +7,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Button } from "~/components/ui/button";
 import { Apple, Github, PlaySquare } from "lucide-react";
 import Link from "next/link";
-import { ElementType } from "react";
+import { type ElementType } from "react";
 import { Badge } from "~/components/ui/badge";
 
 type Link = {

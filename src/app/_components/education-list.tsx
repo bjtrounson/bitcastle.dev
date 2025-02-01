@@ -2,7 +2,6 @@ import { Avatar, AvatarImage } from "~/components/ui/avatar";
 import { formatDate } from "./_utils";
 import Link from "next/link";
 import clsx from "clsx";
-import { Badge } from "~/components/ui/badge";
 
 type Education = {
     provider: string;
