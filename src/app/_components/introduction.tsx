@@ -8,7 +8,7 @@ export function Introduction() {
             </Avatar>
             <div className="flex flex-col my-auto">
                 <h1 className="text-2xl font-bold pb-2">Welcome! 👋</h1>
-                <span className="text-xl pb-1">I'm Ben and I love designing and building things. I'm currently doing things in the navigation an geo-spatial application space.</span>
+                <span className="text-xl pb-1">I&apos;m Ben and I love designing and building things. I&apos;m currently doing things in the navigation an geo-spatial application space.</span>
                 <span className="text-sm text-gray-500">You can sometimes find me in the OpenStreetMaps Slack channels mostly in the #ferrostar channel.</span>
             </div>
         </div>
