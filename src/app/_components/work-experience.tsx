@@ -67,7 +67,6 @@ export function WorkExperienceSection() {
       <h2 className="text-xl font-bold">Work Experience</h2>
       <Accordion
         type="multiple"
-        collapsible={"true"}
         className="rounded-lg border bg-white px-2 shadow-sm"
       >
         {experiences.map((experience) => (
